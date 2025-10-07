@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caffy Landing Page
 
-## Getting Started
+Caffy モバイルアプリの公式ランディングページ
 
-First, run the development server:
+## 🎨 デザイン
+
+- **カラー**: Caffy アプリのブランドカラー（ピンク〜オレンジのグラデーション）
+- **テーマ**: カフェ体験をイメージしたパステルカラー
+- **UI**: モバイルアプリのデザインシステムに準拠
+
+## 📄 ページ構成
+
+- `/` - トップページ
+- `/privacy` - プライバシーポリシー
+- `/terms` - 利用規約
+- `/legal/specified-commercial-transaction` - 特定商取引法に基づく表記（今後追加）
+
+## 🚀 デプロイ
+
+### Vercel にデプロイ
+
+1. **Vercel CLI をインストール**:
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **プロジェクトをデプロイ**:
+   ```bash
+   cd caffy-landing
+   vercel
+   ```
+
+3. **本番環境にデプロイ**:
+   ```bash
+   vercel --prod
+   ```
+
+### 手動デプロイ
+
+1. [Vercel Dashboard](https://vercel.com/dashboard) にアクセス
+2. "Add New Project" をクリック
+3. GitHub リポジトリをインポート（または ZIP をアップロード）
+4. フレームワーク: Next.js (自動検出)
+5. Deploy をクリック
+
+## 🔧 開発
 
 ```bash
+# 依存関係をインストール
+npm install
+
+# 開発サーバーを起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# ビルド
+npm run build
+
+# 本番モードで起動
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 更新履歴
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 2025-01-10: 初版作成
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📧 お問い合わせ
 
-## Learn More
+support@caffy.app
 
-To learn more about Next.js, take a look at the following resources:
+## ⚖️ ライセンス
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2025 Caffy. All rights reserved.
