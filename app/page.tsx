@@ -34,6 +34,12 @@ export default function Home() {
             >
               利用規約
             </Link>
+            <Link
+              href="/legal/tokushoho"
+              className="text-[10px] sm:text-sm lg:text-base text-gray-400 hover:text-[#C4A574] transition"
+            >
+              特商法表記
+            </Link>
             <a
               href="mailto:caffy.help@gmail.com"
               className="text-[10px] sm:text-sm lg:text-base text-gray-400 hover:text-[#C4A574] transition"
