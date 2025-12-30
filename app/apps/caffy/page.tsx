@@ -9,7 +9,7 @@ const caffyApp: AppInfo = {
   heroImage: "/mockdevice/device1.png",
   basePath: "/apps/caffy",
   status: "available",
-  appStoreUrl: "https://apps.apple.com/jp/app/caffy",
+  appStoreUrl: "https://apps.apple.com/jp/app/caffy/id6751098933",
   badges: ["無料で始められる", "マップ機能", "ソーシャル共有"],
   extraNavLinks: [{ label: "特商法", href: "/apps/caffy/legal/tokushoho" }],
   extraFooterLinks: [{ label: "特商法表記", href: "/apps/caffy/legal/tokushoho" }],
