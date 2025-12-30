@@ -12,6 +12,11 @@ export interface AppFeature {
   image: string;
 }
 
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
 export interface AppInfo {
   name: string;
   tagline: string;
@@ -22,6 +27,8 @@ export interface AppInfo {
   badges: string[];
   status: "available" | "coming_soon";
   appStoreUrl?: string;
+  extraNavLinks?: NavLink[];
+  extraFooterLinks?: NavLink[];
 }
 
 interface AppLandingTemplateProps {
@@ -32,13 +39,13 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
   const navLinks = [
     { label: "プライバシー", href: `${app.basePath}/privacy` },
     { label: "利用規約", href: `${app.basePath}/terms` },
-    { label: "サポート", href: `${app.basePath}/support` },
+    ...(app.extraNavLinks || []),
   ];
 
   const footerLinks = [
     { label: "プライバシーポリシー", href: `${app.basePath}/privacy` },
     { label: "利用規約", href: `${app.basePath}/terms` },
-    { label: "サポート", href: `${app.basePath}/support` },
+    ...(app.extraFooterLinks || []),
   ];
 
   return (
