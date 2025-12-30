@@ -5,6 +5,7 @@ import Image from "next/image";
 import RainbowBackground from "./RainbowBackground";
 import Header from "./Header";
 import Footer from "./Footer";
+import { FadeIn, FadeInScale, SlideIn, StaggerContainer, StaggerItem } from "./ScrollAnimations";
 
 export interface AppFeature {
   title: string;
@@ -59,82 +60,91 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Text content */}
             <div className="text-center lg:text-left">
-              <div className="relative inline-block mb-8">
-                <div className="absolute inset-0 rounded-3xl blur-2xl glow-rainbow" />
-                <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/20">
-                  <Image
-                    src={app.logo}
-                    alt={`${app.name} Logo`}
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-                <span className="text-rainbow">{app.name}</span>
-              </h1>
-              <p className="text-gray-400 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mb-8">
-                {app.tagline}
-              </p>
-
-              {app.status === "coming_soon" ? (
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
-                  <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-                  <span className="text-sm text-gray-300">Coming Soon</span>
-                </div>
-              ) : app.appStoreUrl ? (
-                <a
-                  href={app.appStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl hover:bg-gray-100 transition-all duration-300 font-semibold mb-8"
-                >
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                  </svg>
-                  App Storeでダウンロード
-                </a>
-              ) : null}
-
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                {app.badges.map((badge) => (
-                  <div
-                    key={badge}
-                    className="flex items-center gap-2 text-gray-400 text-sm"
-                  >
-                    <svg
-                      className="w-5 h-5 text-emerald-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {badge}
+              <FadeIn delay={0.1}>
+                <div className="relative inline-block mb-8">
+                  <div className="absolute inset-0 rounded-3xl blur-2xl glow-rainbow" />
+                  <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/20">
+                    <Image
+                      src={app.logo}
+                      alt={`${app.name} Logo`}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.2}>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
+                  <span className="text-rainbow">{app.name}</span>
+                </h1>
+              </FadeIn>
+              <FadeIn delay={0.3}>
+                <p className="text-gray-400 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mb-8">
+                  {app.tagline}
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.4}>
+                {app.status === "coming_soon" ? (
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+                    <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                    <span className="text-sm text-gray-300">Coming Soon</span>
+                  </div>
+                ) : app.appStoreUrl ? (
+                  <a
+                    href={app.appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl hover:bg-gray-100 transition-all duration-300 font-semibold mb-8"
+                  >
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                    </svg>
+                    App Storeでダウンロード
+                  </a>
+                ) : null}
+              </FadeIn>
+
+              <StaggerContainer staggerDelay={0.1} className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                {app.badges.map((badge) => (
+                  <StaggerItem key={badge}>
+                    <div className="flex items-center gap-2 text-gray-400 text-sm">
+                      <svg
+                        className="w-5 h-5 text-emerald-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {badge}
+                    </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
 
             {/* Right: Device mockup */}
-            <div className="relative flex justify-center">
-              <div className="relative w-64 md:w-72 animate-float">
-                <Image
-                  src={app.heroImage}
-                  alt={`${app.name} App Screenshot`}
-                  width={350}
-                  height={700}
-                  className="drop-shadow-2xl"
-                />
+            <FadeInScale delay={0.3} duration={0.8}>
+              <div className="relative flex justify-center">
+                <div className="relative w-64 md:w-72 animate-float">
+                  <Image
+                    src={app.heroImage}
+                    alt={`${app.name} App Screenshot`}
+                    width={350}
+                    height={700}
+                    className="drop-shadow-2xl"
+                  />
+                </div>
               </div>
-            </div>
+            </FadeInScale>
           </div>
         </div>
       </section>
@@ -142,14 +152,14 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
       {/* Features Section */}
       <section className="px-6 md:px-12 py-24 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-20">
+          <FadeIn className="text-center mb-20">
             <h2 className="text-sm font-medium text-gray-500 uppercase tracking-widest mb-4">
               Features
             </h2>
             <p className="text-3xl md:text-4xl font-bold text-white">
               シンプルで使いやすい機能
             </p>
-          </div>
+          </FadeIn>
 
           <div className="space-y-32">
             {app.features.map((feature, index) => (
@@ -160,7 +170,8 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
                 }`}
               >
                 {/* Text */}
-                <div
+                <SlideIn
+                  direction={index % 2 === 0 ? "left" : "right"}
                   className={`text-center lg:text-left ${
                     index % 2 === 1 ? "lg:order-2" : ""
                   }`}
@@ -174,10 +185,12 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
                   <p className="text-gray-400 text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
                     {feature.description}
                   </p>
-                </div>
+                </SlideIn>
 
                 {/* Device Image */}
-                <div
+                <SlideIn
+                  direction={index % 2 === 0 ? "right" : "left"}
+                  delay={0.1}
                   className={`flex justify-center ${
                     index % 2 === 1 ? "lg:order-1" : ""
                   }`}
@@ -191,7 +204,7 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
                       className="drop-shadow-xl"
                     />
                   </div>
-                </div>
+                </SlideIn>
               </div>
             ))}
           </div>
@@ -201,37 +214,39 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
       {/* CTA Section */}
       <section className="px-6 md:px-12 py-24 relative z-10">
         <div className="container mx-auto max-w-4xl">
-          <div className="glass-card rounded-3xl p-12 text-center border-rainbow">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {app.status === "coming_soon"
-                ? "もうすぐリリース"
-                : `${app.name}を始めよう`}
-            </h2>
-            <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              {app.status === "coming_soon"
-                ? `${app.name}は現在開発中です。リリースをお楽しみに。`
-                : `${app.name}で毎日をもっと楽しく記録しましょう。`}
-            </p>
-            <Link
-              href={`${app.basePath}/support`}
-              className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-semibold"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          <FadeInScale duration={0.7}>
+            <div className="glass-card rounded-3xl p-12 text-center border-rainbow">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                {app.status === "coming_soon"
+                  ? "もうすぐリリース"
+                  : `${app.name}を始めよう`}
+              </h2>
+              <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+                {app.status === "coming_soon"
+                  ? `${app.name}は現在開発中です。リリースをお楽しみに。`
+                  : `${app.name}で毎日をもっと楽しく記録しましょう。`}
+              </p>
+              <Link
+                href={`${app.basePath}/support`}
+                className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-semibold"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              お問い合わせ
-            </Link>
-          </div>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                お問い合わせ
+              </Link>
+            </div>
+          </FadeInScale>
         </div>
       </section>
 
