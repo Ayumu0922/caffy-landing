@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ayumu Kubota - iOS App Developer",
-  description: "日常をより豊かにするiOSアプリを開発しています。Caffy, Footieなど。",
+  description: "日常をより豊かにするiOSアプリを開発しています。Caffy, Memoresなど。",
 };
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { RainbowBackground, Header } from "@/app/components";
 
 export const metadata = {
   title: "Caffy - 利用規約",
@@ -8,37 +8,17 @@ export const metadata = {
 
 export default function CaffyTerms() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
-      <header className="fixed top-0 w-full bg-[#0a0a0a] border-b border-gray-800 z-50">
-        <nav className="container mx-auto px-6 md:px-12 py-4 md:py-6 flex items-center justify-between">
-          <Link href="/apps/caffy" className="flex items-center gap-2 md:gap-3">
-            <Image
-              src="/caffy_logo.png"
-              alt="Caffy Logo"
-              width={32}
-              height={32}
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-white">
-              Caffy
-            </span>
-          </Link>
-          <Link
-            href="/apps/caffy"
-            className="text-gray-400 hover:text-[#C4A574] transition text-sm md:text-base"
-          >
-            ホームに戻る
-          </Link>
-        </nav>
-      </header>
+    <main className="min-h-screen gradient-bg noise-overlay">
+      <RainbowBackground />
+      <Header showAppLink={{ name: "Caffy", href: "/apps/caffy" }} />
 
-      <div className="container mx-auto max-w-4xl px-6 pt-32 pb-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-          利用規約
+      <div className="container mx-auto max-w-4xl px-6 pt-32 pb-20 relative z-10">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <span className="text-rainbow">利用規約</span>
         </h1>
         <p className="text-gray-400 mb-12">最終更新日: 2025年1月9日</p>
 
-        <div className="bg-[#1a1a1a] rounded-2xl p-8 md:p-12 border border-gray-800 space-y-8">
+        <div className="glass-card rounded-3xl p-8 md:p-12 space-y-8">
           <section>
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
               1. 規約への同意
@@ -47,7 +27,7 @@ export default function CaffyTerms() {
               Caffy（以下「本サービス」）は、カフェ体験を記録・共有するためのソーシャルプラットフォームです。本サービスを利用することで、本利用規約および
               <Link
                 href="/apps/caffy/privacy"
-                className="text-[#C4A574] hover:text-white transition"
+                className="text-white hover:underline transition"
               >
                 プライバシーポリシー
               </Link>
@@ -152,21 +132,6 @@ export default function CaffyTerms() {
               <li>わいせつ、ポルノ、または不適切な性的コンテンツ</li>
               <li>ヘイトスピーチ、差別的な表現</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mb-3 text-white mt-6">
-              3.4 コンテンツの責任
-            </h3>
-            <ul className="list-disc list-inside text-gray-300 leading-relaxed space-y-2 ml-4">
-              <li>
-                投稿するコンテンツについて、ユーザーが単独で責任を負います
-              </li>
-              <li>
-                投稿者は、コンテンツを投稿する権利を有することを保証します
-              </li>
-              <li>
-                Caffyは、コンテンツの正確性、品質、適法性について保証しません
-              </li>
-            </ul>
           </section>
 
           <section>
@@ -253,9 +218,7 @@ export default function CaffyTerms() {
             </p>
             <ul className="list-disc list-inside text-gray-300 leading-relaxed space-y-2 ml-4">
               <li>法令または公序良俗に違反する行為</li>
-              <li>
-                他のユーザーへの嫌がらせ、誹謗中傷、脅迫、ストーカー行為
-              </li>
+              <li>他のユーザーへの嫌がらせ、誹謗中傷、脅迫、ストーカー行為</li>
               <li>
                 他者の知的財産権、プライバシー権、その他の権利を侵害する行為
               </li>
@@ -266,9 +229,7 @@ export default function CaffyTerms() {
               <li>
                 不正な方法でサービスにアクセスする行為（ハッキング、リバースエンジニアリング等）
               </li>
-              <li>
-                自動化されたツール（ボット、スクレイパー等）を使用する行為
-              </li>
+              <li>自動化されたツール（ボット、スクレイパー等）を使用する行為</li>
               <li>複数のアカウントを作成する行為</li>
               <li>他人になりすます行為</li>
               <li>サービスの運営を妨害する行為</li>
@@ -343,9 +304,7 @@ export default function CaffyTerms() {
                 第三者サービス（Google
                 Maps、Stripe等）の障害や変更について責任を負いません
               </li>
-              <li>
-                データの損失、破損、または誤動作について責任を負いません
-              </li>
+              <li>データの損失、破損、または誤動作について責任を負いません</li>
               <li>
                 サービスの中断、終了、変更によって生じた損害について責任を負いません
               </li>
@@ -378,7 +337,7 @@ export default function CaffyTerms() {
               個人情報の収集、使用、共有については、別途定める
               <Link
                 href="/apps/caffy/privacy"
-                className="text-[#C4A574] hover:text-white transition font-semibold"
+                className="text-white hover:underline transition font-semibold"
               >
                 プライバシーポリシー
               </Link>
@@ -411,10 +370,10 @@ export default function CaffyTerms() {
             <p className="text-gray-300 leading-relaxed">
               本規約に関するご質問、不適切なコンテンツの報告、その他のお問い合わせは、以下までご連絡ください：
             </p>
-            <p className="text-[#C4A574] font-semibold mt-4">
+            <p className="mt-4">
               <a
                 href="mailto:caffy.help@gmail.com"
-                className="hover:text-white transition"
+                className="text-white font-semibold hover:underline transition"
               >
                 caffy.help@gmail.com
               </a>
@@ -422,12 +381,25 @@ export default function CaffyTerms() {
           </section>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/apps/caffy"
-            className="inline-flex items-center gap-2 border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#0a0a0a] transition font-semibold"
+            className="inline-flex items-center gap-2 glass-card px-8 py-4 rounded-xl hover:bg-white/10 transition font-semibold text-white"
           >
-            ← ホームに戻る
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            ホームに戻る
           </Link>
         </div>
       </div>

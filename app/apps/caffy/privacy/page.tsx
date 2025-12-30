@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { RainbowBackground, Header } from "@/app/components";
 
 export const metadata = {
   title: "Caffy - プライバシーポリシー",
@@ -8,37 +8,17 @@ export const metadata = {
 
 export default function CaffyPrivacy() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
-      <header className="fixed top-0 w-full bg-[#0a0a0a] border-b border-gray-800 z-50">
-        <nav className="container mx-auto px-6 md:px-12 py-4 md:py-6 flex items-center justify-between">
-          <Link href="/apps/caffy" className="flex items-center gap-2 md:gap-3">
-            <Image
-              src="/caffy_logo.png"
-              alt="Caffy Logo"
-              width={32}
-              height={32}
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-white">
-              Caffy
-            </span>
-          </Link>
-          <Link
-            href="/apps/caffy"
-            className="text-gray-400 hover:text-[#C4A574] transition text-sm md:text-base"
-          >
-            ホームに戻る
-          </Link>
-        </nav>
-      </header>
+    <main className="min-h-screen gradient-bg noise-overlay">
+      <RainbowBackground />
+      <Header showAppLink={{ name: "Caffy", href: "/apps/caffy" }} />
 
-      <div className="container mx-auto max-w-4xl px-6 pt-32 pb-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-          プライバシーポリシー
+      <div className="container mx-auto max-w-4xl px-6 pt-32 pb-20 relative z-10">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <span className="text-rainbow">プライバシーポリシー</span>
         </h1>
         <p className="text-gray-400 mb-12">最終更新日: 2025年1月9日</p>
 
-        <div className="bg-[#1a1a1a] rounded-2xl p-8 md:p-12 border border-gray-800 space-y-8">
+        <div className="glass-card rounded-3xl p-8 md:p-12 space-y-8">
           <section>
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
               1. 収集する情報
@@ -160,7 +140,9 @@ export default function CaffyPrivacy() {
                 プライバシーポリシー：
                 <a
                   href="https://supabase.com/privacy"
-                  className="text-[#C4A574] hover:text-white transition"
+                  className="text-white hover:underline transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   https://supabase.com/privacy
                 </a>
@@ -182,7 +164,9 @@ export default function CaffyPrivacy() {
                 プライバシーポリシー：
                 <a
                   href="https://stripe.com/privacy"
-                  className="text-[#C4A574] hover:text-white transition"
+                  className="text-white hover:underline transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   https://stripe.com/privacy
                 </a>
@@ -199,7 +183,9 @@ export default function CaffyPrivacy() {
                 プライバシーポリシー：
                 <a
                   href="https://policies.google.com/privacy"
-                  className="text-[#C4A574] hover:text-white transition"
+                  className="text-white hover:underline transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   https://policies.google.com/privacy
                 </a>
@@ -382,10 +368,10 @@ export default function CaffyPrivacy() {
             <p className="text-gray-300 leading-relaxed">
               プライバシーに関するご質問、データアクセスのリクエスト、その他のお問い合わせは、以下までご連絡ください：
             </p>
-            <p className="text-[#C4A574] font-semibold mt-4">
+            <p className="mt-4">
               <a
                 href="mailto:caffy.help@gmail.com"
-                className="hover:text-white transition"
+                className="text-white font-semibold hover:underline transition"
               >
                 caffy.help@gmail.com
               </a>
@@ -393,12 +379,25 @@ export default function CaffyPrivacy() {
           </section>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/apps/caffy"
-            className="inline-flex items-center gap-2 border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#0a0a0a] transition font-semibold"
+            className="inline-flex items-center gap-2 glass-card px-8 py-4 rounded-xl hover:bg-white/10 transition font-semibold text-white"
           >
-            ← ホームに戻る
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            ホームに戻る
           </Link>
         </div>
       </div>

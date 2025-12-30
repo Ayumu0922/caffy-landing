@@ -86,6 +86,95 @@ body {
   box-shadow: 0 0 40px rgba(196, 165, 116, 0.2);
 }
 
+/* Rainbow/Iridescent glow */
+.glow-rainbow {
+  position: relative;
+}
+
+.glow-rainbow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #feca57,
+    #48dbfb,
+    #ff9ff3,
+    #54a0ff,
+    #5f27cd,
+    #ff6b6b
+  );
+  background-size: 400% 400%;
+  border-radius: inherit;
+  filter: blur(15px);
+  opacity: 0.4;
+  animation: rainbowShift 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes rainbowShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Rainbow gradient text */
+.text-rainbow {
+  background: linear-gradient(
+    135deg,
+    #ff6b6b 0%,
+    #feca57 20%,
+    #48dbfb 40%,
+    #ff9ff3 60%,
+    #54a0ff 80%,
+    #5f27cd 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbowText 5s ease-in-out infinite;
+}
+
+@keyframes rainbowText {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Rainbow border */
+.border-rainbow {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.border-rainbow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.5),
+    rgba(254, 202, 87, 0.5),
+    rgba(72, 219, 251, 0.5),
+    rgba(255, 159, 243, 0.5),
+    rgba(84, 160, 255, 0.5)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
 /* Noise texture overlay */
 .noise-overlay::after {
   content: '';

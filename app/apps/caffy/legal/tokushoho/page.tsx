@@ -1,63 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { RainbowBackground, Header } from "@/app/components";
 
 export default function TokushohoPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-[#0a0a0a] border-b border-gray-800 z-50">
-        <nav className="container mx-auto px-6 md:px-12 py-4 md:py-6 flex items-center justify-between">
-          <Link href="/apps/caffy" className="flex items-center gap-2 md:gap-3">
-            <Image
-              src="/caffy_logo.png"
-              alt="Caffy Logo"
-              width={32}
-              height={32}
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-white">
-              Caffy
-            </span>
-          </Link>
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-12">
-            <Link
-              href="/apps/caffy/privacy"
-              className="text-[10px] sm:text-sm lg:text-base text-gray-400 hover:text-[#C4A574] transition"
-            >
-              プライバシーポリシー
-            </Link>
-            <Link
-              href="/apps/caffy/terms"
-              className="text-[10px] sm:text-sm lg:text-base text-gray-400 hover:text-[#C4A574] transition"
-            >
-              利用規約
-            </Link>
-            <Link
-              href="/apps/caffy/legal/tokushoho"
-              className="text-[10px] sm:text-sm lg:text-base text-gray-400 hover:text-[#C4A574] transition"
-            >
-              特商法表記
-            </Link>
-            <a
-              href="mailto:caffy.help@gmail.com"
-              className="text-[10px] sm:text-sm lg:text-base text-gray-400 hover:text-[#C4A574] transition"
-            >
-              お問い合わせ
-            </a>
-          </div>
-        </nav>
-      </header>
+    <main className="min-h-screen gradient-bg noise-overlay">
+      <RainbowBackground />
+      <Header showAppLink={{ name: "Caffy", href: "/apps/caffy" }} />
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-12 pt-32 pb-16 max-w-4xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-          特定商取引法に基づく表記
+      <div className="container mx-auto px-6 md:px-12 pt-32 pb-16 max-w-4xl relative z-10">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">
+          <span className="text-rainbow">特定商取引法に基づく表記</span>
         </h1>
         <p className="text-sm text-gray-500 mb-12">最終更新日: 2025年1月9日</p>
 
-        <div className="space-y-8">
+        <div className="glass-card rounded-3xl p-8 md:p-12 space-y-8">
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">販売事業者</h2>
             <p className="text-gray-300">窪田歩夢</p>
@@ -93,9 +52,7 @@ export default function TokushohoPage() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">販売価格</h2>
             <div className="text-gray-300">
-              <p className="font-semibold text-[#C4A574] mb-2">
-                プレミアムプラン
-              </p>
+              <p className="font-semibold text-white mb-2">プレミアムプラン</p>
               <ul className="list-disc list-inside space-y-1 ml-2">
                 <li>月額プラン: ¥500（税込）/ 月</li>
                 <li>年額プラン: ¥5,000（税込）/ 年</li>
@@ -235,12 +192,25 @@ export default function TokushohoPage() {
           </section>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-800">
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/apps/caffy"
-            className="text-[#C4A574] hover:text-[#d4b584] transition"
+            className="inline-flex items-center gap-2 glass-card px-8 py-4 rounded-xl hover:bg-white/10 transition font-semibold text-white"
           >
-            ← Caffyトップに戻る
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Caffyトップに戻る
           </Link>
         </div>
       </div>
