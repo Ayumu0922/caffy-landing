@@ -131,7 +131,7 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
                   alt={`${app.name} App Screenshot`}
                   width={350}
                   height={700}
-                  className="rounded-[2rem] shadow-2xl shadow-black/50"
+                  className="drop-shadow-2xl"
                 />
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function AppLandingTemplate({ app }: AppLandingTemplateProps) {
                       alt={feature.title}
                       width={300}
                       height={600}
-                      className="rounded-[2rem] shadow-xl shadow-black/30"
+                      className="drop-shadow-xl"
                     />
                   </div>
                 </div>
