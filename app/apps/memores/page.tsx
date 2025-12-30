@@ -6,7 +6,7 @@ const memoresApp: AppInfo = {
   name: "Memores",
   tagline: "大切な思い出を写真で記録・整理するライフログアプリ",
   logo: "/memores_logo.png",
-  heroImage: "/memores/Device-2.png",
+  heroImage: "/memores/Device.png",
   basePath: "/apps/memores",
   status: "coming_soon",
   badges: ["完全無料", "オフライン対応", "プライバシー重視"],
