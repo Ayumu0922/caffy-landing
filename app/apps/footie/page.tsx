@@ -1,10 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Footie - 食事写真記録アプリ",
-  description: "日々の食事を写真で記録・整理するライフログアプリ",
-};
+const features = [
+  {
+    title: "写真をタグで整理",
+    description: "食事の写真をタグ付けで簡単に整理。「#クリスマス」「#ランチ」など、自分だけのカテゴリで管理できます。",
+    image: "/footie/Device-2.png",
+  },
+  {
+    title: "マップで振り返り",
+    description: "訪れたお店をマップ上で確認。どこで何を食べたか、思い出を地図と共に振り返れます。",
+    image: "/footie/Device-3.png",
+  },
+  {
+    title: "お好みのテーマで",
+    description: "ダークモード・ライトモード対応。20種類以上のカラーテーマで、あなた好みにカスタマイズ。",
+    image: "/footie/Device-4.png",
+  },
+  {
+    title: "プライバシーを守る",
+    description: "パスコードでアプリをロック。大切な思い出を安全に保護します。",
+    image: "/footie/Device-1.png",
+  },
+];
 
 export default function FootiePage() {
   return (
@@ -54,113 +74,151 @@ export default function FootiePage() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center px-6 md:px-12 pt-24 relative z-10">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="relative inline-block mb-8">
-            <div className="absolute inset-0 bg-green-500/30 rounded-3xl blur-2xl" />
-            <div className="relative w-24 h-24 rounded-3xl overflow-hidden ring-1 ring-white/20">
-              <Image
-                src="/footie_logo.png"
-                alt="Footie Logo"
-                width={96}
-                height={96}
-                className="w-full h-full object-cover"
-              />
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text content */}
+            <div className="text-center lg:text-left">
+              <div className="relative inline-block mb-8">
+                <div className="absolute inset-0 bg-green-500/30 rounded-3xl blur-2xl" />
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/20">
+                  <Image
+                    src="/footie_logo.png"
+                    alt="Footie Logo"
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
+                <span className="bg-gradient-to-r from-green-400 via-emerald-300 to-teal-400 bg-clip-text text-transparent">
+                  Footie
+                </span>
+              </h1>
+              <p className="text-gray-400 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mb-8">
+                日々の食事を写真で記録・整理するライフログアプリ
+              </p>
+
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+                <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                <span className="text-sm text-gray-300">Coming Soon</span>
+              </div>
+
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <div className="flex items-center gap-2 text-gray-400 text-sm">
+                  <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  完全無料
+                </div>
+                <div className="flex items-center gap-2 text-gray-400 text-sm">
+                  <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  オフライン対応
+                </div>
+                <div className="flex items-center gap-2 text-gray-400 text-sm">
+                  <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  プライバシー重視
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Device mockup */}
+            <div className="relative flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-[3rem] blur-3xl" />
+                <div className="relative w-64 md:w-72 animate-float">
+                  <Image
+                    src="/footie/Device-2.png"
+                    alt="Footie App Screenshot"
+                    width={350}
+                    height={700}
+                    className="rounded-[2rem] shadow-2xl shadow-black/50"
+                  />
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-green-400 via-emerald-300 to-teal-400 bg-clip-text text-transparent">
-              Footie
-            </span>
-          </h1>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            日々の食事を写真で記録・整理するライフログアプリ
-          </p>
-
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-16">
-            <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-            <span className="text-sm text-gray-300">Coming Soon</span>
+      {/* Features Section */}
+      <section className="px-6 md:px-12 py-24 relative z-10">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-20">
+            <h2 className="text-sm font-medium text-green-400 uppercase tracking-widest mb-4">
+              Features
+            </h2>
+            <p className="text-3xl md:text-4xl font-bold text-white">
+              シンプルで使いやすい機能
+            </p>
           </div>
 
-          {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="glass-card rounded-2xl p-6 group hover:bg-white/5 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 flex items-center justify-center mb-4 ring-1 ring-white/10">
-                <svg
-                  className="w-6 h-6 text-green-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                写真で記録
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                フォトライブラリから食事の写真を自動認識。タグ付けで簡単に整理。
-              </p>
-            </div>
+          <div className="space-y-32">
+            {features.map((feature, index) => (
+              <div
+                key={feature.title}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Text */}
+                <div className={`text-center lg:text-left ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 ring-1 ring-white/10 mb-6">
+                    <span className="text-green-400 font-bold">{index + 1}</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                    {feature.description}
+                  </p>
+                </div>
 
-            <div className="glass-card rounded-2xl p-6 group hover:bg-white/5 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 flex items-center justify-center mb-4 ring-1 ring-white/10">
-                <svg
-                  className="w-6 h-6 text-green-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+                {/* Device Image */}
+                <div className={`flex justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative w-52 md:w-60 transform transition-transform duration-500 group-hover:scale-105">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        width={300}
+                        height={600}
+                        className="rounded-[2rem] shadow-xl shadow-black/30"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                マップで振り返り
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                訪れたお店をマップ上で確認。お気に入りの場所を見つけよう。
-              </p>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="glass-card rounded-2xl p-6 group hover:bg-white/5 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 flex items-center justify-center mb-4 ring-1 ring-white/10">
-                <svg
-                  className="w-6 h-6 text-green-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                プライバシー重視
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                すべてのデータはデバイス内に保存。外部サーバーへの送信なし。
-              </p>
-            </div>
+      {/* CTA Section */}
+      <section className="px-6 md:px-12 py-24 relative z-10">
+        <div className="container mx-auto max-w-4xl">
+          <div className="glass-card rounded-3xl p-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              もうすぐリリース
+            </h2>
+            <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+              Footieは現在開発中です。リリースをお楽しみに。
+            </p>
+            <Link
+              href="/apps/footie/support"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 font-semibold shadow-lg shadow-green-500/25"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              お問い合わせ
+            </Link>
           </div>
         </div>
       </section>
