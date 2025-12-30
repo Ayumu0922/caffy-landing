@@ -16,10 +16,10 @@ const apps = [
     appStore: "https://apps.apple.com/jp/app/caffy",
   },
   {
-    name: "Footie",
+    name: "Memores",
     description: "食事の写真を記録・整理するライフログアプリ",
-    logo: "/footie_logo.png",
-    href: "/apps/footie",
+    logo: "/memores_logo.png",
+    href: "/apps/memores",
     color: "#4CAF50",
     gradientFrom: "from-green-500/20",
     gradientTo: "to-emerald-600/20",

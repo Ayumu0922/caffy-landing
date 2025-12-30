@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Footie - サポート",
-  description: "Footieアプリのサポートページ",
+  title: "Memores - サポート",
+  description: "Memoresアプリのサポートページ",
 };
 
-export default function FootieSupport() {
+export default function MemoresSupport() {
   return (
     <main className="min-h-screen gradient-bg noise-overlay">
       {/* Animated background orbs */}
@@ -27,10 +27,10 @@ export default function FootieSupport() {
               </span>
             </Link>
             <Link
-              href="/apps/footie"
+              href="/apps/memores"
               className="text-gray-400 hover:text-green-400 transition text-sm md:text-base"
             >
-              Footie
+              Memores
             </Link>
           </div>
         </nav>
@@ -42,7 +42,7 @@ export default function FootieSupport() {
             サポート
           </span>
         </h1>
-        <p className="text-gray-400 mb-12">Footie - 食事写真記録アプリ</p>
+        <p className="text-gray-400 mb-12">Memores - 食事写真記録アプリ</p>
 
         <div className="glass-card rounded-3xl p-8 md:p-12 space-y-10">
           <section>
@@ -50,11 +50,11 @@ export default function FootieSupport() {
               お問い合わせ
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Footieに関するご質問、不具合の報告、機能のご要望などがございましたら、
+              Memoresに関するご質問、不具合の報告、機能のご要望などがございましたら、
               以下のメールアドレスまでお気軽にお問い合わせください。
             </p>
             <a
-              href="mailto:caffy.help@gmail.com?subject=Footie%20-%20お問い合わせ"
+              href="mailto:caffy.help@gmail.com?subject=Memores%20-%20お問い合わせ"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 font-semibold shadow-lg shadow-green-500/25"
             >
               <svg
@@ -98,7 +98,7 @@ export default function FootieSupport() {
                 </h3>
                 <p className="text-gray-300 leading-relaxed pl-8">
                   アプリ内で写真の記録を削除しても、元の写真はデバイスのフォトライブラリに残ります。
-                  Footieはあくまで写真のメタデータ（タグ、場所など）を管理するアプリです。
+                  Memoresはあくまで写真のメタデータ（タグ、場所など）を管理するアプリです。
                 </p>
               </div>
 
@@ -132,7 +132,7 @@ export default function FootieSupport() {
             </h2>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/apps/footie/privacy"
+                href="/apps/memores/privacy"
                 className="inline-flex items-center gap-2 text-green-400 hover:text-white transition group"
               >
                 プライバシーポリシー
@@ -141,7 +141,7 @@ export default function FootieSupport() {
                 </svg>
               </Link>
               <Link
-                href="/apps/footie/terms"
+                href="/apps/memores/terms"
                 className="inline-flex items-center gap-2 text-green-400 hover:text-white transition group"
               >
                 利用規約

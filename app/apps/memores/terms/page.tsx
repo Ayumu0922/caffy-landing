@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Footie - 利用規約",
-  description: "Footieアプリの利用規約",
+  title: "Memores - 利用規約",
+  description: "Memoresアプリの利用規約",
 };
 
-export default function FootieTerms() {
+export default function MemoresTerms() {
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
       <header className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-800 z-50">
@@ -16,10 +16,10 @@ export default function FootieTerms() {
             </span>
           </Link>
           <Link
-            href="/apps/footie"
+            href="/apps/memores"
             className="text-gray-400 hover:text-[#4CAF50] transition text-sm md:text-base"
           >
-            Footie
+            Memores
           </Link>
         </nav>
       </header>
@@ -36,10 +36,10 @@ export default function FootieTerms() {
               1. 規約への同意
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              Footie（以下「本アプリ」）は、食事の写真を記録・整理するためのアプリケーションです。
+              Memores（以下「本アプリ」）は、食事の写真を記録・整理するためのアプリケーションです。
               本アプリを利用することで、本利用規約および
               <Link
-                href="/apps/footie/privacy"
+                href="/apps/memores/privacy"
                 className="text-[#4CAF50] hover:text-white transition"
               >
                 プライバシーポリシー
@@ -142,7 +142,7 @@ export default function FootieTerms() {
             <p className="text-gray-300 leading-relaxed">
               個人情報の取り扱いについては、別途定める
               <Link
-                href="/apps/footie/privacy"
+                href="/apps/memores/privacy"
                 className="text-[#4CAF50] hover:text-white transition font-semibold"
               >
                 プライバシーポリシー
@@ -192,7 +192,7 @@ export default function FootieTerms() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
-            href="/apps/footie/support"
+            href="/apps/memores/support"
             className="inline-flex items-center gap-2 border border-[#4CAF50] text-[#4CAF50] px-8 py-4 rounded-xl hover:bg-[#4CAF50] hover:text-white transition font-semibold"
           >
             サポート

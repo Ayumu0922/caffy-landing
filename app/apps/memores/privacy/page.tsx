@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Footie - プライバシーポリシー",
-  description: "Footieアプリのプライバシーポリシー",
+  title: "Memores - プライバシーポリシー",
+  description: "Memoresアプリのプライバシーポリシー",
 };
 
-export default function FootiePrivacy() {
+export default function MemoresPrivacy() {
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
       <header className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-800 z-50">
@@ -16,10 +16,10 @@ export default function FootiePrivacy() {
             </span>
           </Link>
           <Link
-            href="/apps/footie"
+            href="/apps/memores"
             className="text-gray-400 hover:text-[#4CAF50] transition text-sm md:text-base"
           >
-            Footie
+            Memores
           </Link>
         </nav>
       </header>
@@ -36,7 +36,7 @@ export default function FootiePrivacy() {
               概要
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              Footie（以下「本アプリ」）は、ユーザーのプライバシーを最優先に設計されています。
+              Memores（以下「本アプリ」）は、ユーザーのプライバシーを最優先に設計されています。
               本アプリはすべてのデータをお使いのデバイス内にローカル保存し、
               外部サーバーへのデータ送信は一切行いません。
             </p>
@@ -194,7 +194,7 @@ export default function FootiePrivacy() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
-            href="/apps/footie/support"
+            href="/apps/memores/support"
             className="inline-flex items-center gap-2 border border-[#4CAF50] text-[#4CAF50] px-8 py-4 rounded-xl hover:bg-[#4CAF50] hover:text-white transition font-semibold"
           >
             サポート

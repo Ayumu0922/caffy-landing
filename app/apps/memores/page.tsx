@@ -7,26 +7,26 @@ const features = [
   {
     title: "写真をタグで整理",
     description: "食事の写真をタグ付けで簡単に整理。「#クリスマス」「#ランチ」など、自分だけのカテゴリで管理できます。",
-    image: "/footie/Device-2.png",
+    image: "/memores/Device-2.png",
   },
   {
     title: "マップで振り返り",
     description: "訪れたお店をマップ上で確認。どこで何を食べたか、思い出を地図と共に振り返れます。",
-    image: "/footie/Device-3.png",
+    image: "/memores/Device-3.png",
   },
   {
     title: "お好みのテーマで",
     description: "ダークモード・ライトモード対応。20種類以上のカラーテーマで、あなた好みにカスタマイズ。",
-    image: "/footie/Device-4.png",
+    image: "/memores/Device-4.png",
   },
   {
     title: "プライバシーを守る",
     description: "パスコードでアプリをロック。大切な思い出を安全に保護します。",
-    image: "/footie/Device-1.png",
+    image: "/memores/Device-1.png",
   },
 ];
 
-export default function FootiePage() {
+export default function MemoresPage() {
   return (
     <main className="min-h-screen gradient-bg noise-overlay">
       {/* Animated background orbs */}
@@ -50,19 +50,19 @@ export default function FootiePage() {
             </Link>
             <div className="flex items-center gap-4 md:gap-8">
               <Link
-                href="/apps/footie/privacy"
+                href="/apps/memores/privacy"
                 className="text-xs sm:text-sm text-gray-400 hover:text-[#4CAF50] transition"
               >
                 プライバシー
               </Link>
               <Link
-                href="/apps/footie/terms"
+                href="/apps/memores/terms"
                 className="text-xs sm:text-sm text-gray-400 hover:text-[#4CAF50] transition"
               >
                 利用規約
               </Link>
               <Link
-                href="/apps/footie/support"
+                href="/apps/memores/support"
                 className="text-xs sm:text-sm text-gray-400 hover:text-[#4CAF50] transition"
               >
                 サポート
@@ -82,8 +82,8 @@ export default function FootiePage() {
                 <div className="absolute inset-0 bg-green-500/30 rounded-3xl blur-2xl" />
                 <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/20">
                   <Image
-                    src="/footie_logo.png"
-                    alt="Footie Logo"
+                    src="/memores_logo.png"
+                    alt="Memores Logo"
                     width={80}
                     height={80}
                     className="w-full h-full object-cover"
@@ -93,7 +93,7 @@ export default function FootiePage() {
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
                 <span className="bg-gradient-to-r from-green-400 via-emerald-300 to-teal-400 bg-clip-text text-transparent">
-                  Footie
+                  Memores
                 </span>
               </h1>
               <p className="text-gray-400 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mb-8">
@@ -133,8 +133,8 @@ export default function FootiePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-[3rem] blur-3xl" />
                 <div className="relative w-64 md:w-72 animate-float">
                   <Image
-                    src="/footie/Device-2.png"
-                    alt="Footie App Screenshot"
+                    src="/memores/Device-2.png"
+                    alt="Memores App Screenshot"
                     width={350}
                     height={700}
                     className="rounded-[2rem] shadow-2xl shadow-black/50"
@@ -208,10 +208,10 @@ export default function FootiePage() {
               もうすぐリリース
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              Footieは現在開発中です。リリースをお楽しみに。
+              Memoresは現在開発中です。リリースをお楽しみに。
             </p>
             <Link
-              href="/apps/footie/support"
+              href="/apps/memores/support"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 font-semibold shadow-lg shadow-green-500/25"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,19 +229,19 @@ export default function FootiePage() {
           <div className="glass-card rounded-2xl p-8 text-center">
             <div className="flex flex-wrap justify-center gap-6 mb-6">
               <Link
-                href="/apps/footie/privacy"
+                href="/apps/memores/privacy"
                 className="text-gray-400 text-sm hover:text-green-400 transition"
               >
                 プライバシーポリシー
               </Link>
               <Link
-                href="/apps/footie/terms"
+                href="/apps/memores/terms"
                 className="text-gray-400 text-sm hover:text-green-400 transition"
               >
                 利用規約
               </Link>
               <Link
-                href="/apps/footie/support"
+                href="/apps/memores/support"
                 className="text-gray-400 text-sm hover:text-green-400 transition"
               >
                 サポート
