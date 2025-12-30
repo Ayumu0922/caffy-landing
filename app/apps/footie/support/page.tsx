@@ -7,32 +7,46 @@ export const metadata = {
 
 export default function FootieSupport() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
-      <header className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-800 z-50">
-        <nav className="container mx-auto px-6 md:px-12 py-4 md:py-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 md:gap-3">
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-white">
-              Ayumu Kubota
-            </span>
-          </Link>
-          <Link
-            href="/apps/footie"
-            className="text-gray-400 hover:text-[#4CAF50] transition text-sm md:text-base"
-          >
-            Footie
-          </Link>
+    <main className="min-h-screen gradient-bg noise-overlay">
+      {/* Animated background orbs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "2s" }} />
+      </div>
+
+      {/* Header */}
+      <header className="fixed top-0 w-full z-50">
+        <nav className="mx-4 mt-4">
+          <div className="glass-card rounded-2xl px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
+            <Link href="/" className="flex items-center gap-2 md:gap-3">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center">
+                <span className="text-sm font-bold text-white">AK</span>
+              </div>
+              <span className="text-lg font-semibold text-white">
+                Ayumu Kubota
+              </span>
+            </Link>
+            <Link
+              href="/apps/footie"
+              className="text-gray-400 hover:text-green-400 transition text-sm md:text-base"
+            >
+              Footie
+            </Link>
+          </div>
         </nav>
       </header>
 
-      <div className="container mx-auto max-w-4xl px-6 pt-32 pb-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-          サポート
+      <div className="container mx-auto max-w-4xl px-6 pt-32 pb-20 relative z-10">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <span className="bg-gradient-to-r from-green-400 via-emerald-300 to-teal-400 bg-clip-text text-transparent">
+            サポート
+          </span>
         </h1>
         <p className="text-gray-400 mb-12">Footie - 食事写真記録アプリ</p>
 
-        <div className="bg-[#1a1a1a] rounded-2xl p-8 md:p-12 border border-gray-800 space-y-8">
+        <div className="glass-card rounded-3xl p-8 md:p-12 space-y-10">
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
               お問い合わせ
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
@@ -41,7 +55,7 @@ export default function FootieSupport() {
             </p>
             <a
               href="mailto:caffy.help@gmail.com?subject=Footie%20-%20お問い合わせ"
-              className="inline-flex items-center gap-3 border border-[#4CAF50] text-[#4CAF50] px-6 py-3 rounded-xl hover:bg-[#4CAF50] hover:text-white transition font-semibold"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 font-semibold shadow-lg shadow-green-500/25"
             >
               <svg
                 className="w-5 h-5"
@@ -61,50 +75,50 @@ export default function FootieSupport() {
           </section>
 
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
               よくある質問
             </h2>
 
             <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Q. 写真はどこに保存されますか？
+              <div className="glass-card rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-sm">Q</span>
+                  写真はどこに保存されますか？
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  A.
+                <p className="text-gray-300 leading-relaxed pl-8">
                   すべての写真とデータはお使いのデバイス内にローカル保存されます。
                   クラウドへのアップロードは行われないため、プライバシーが保護されます。
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Q. 写真を削除するとどうなりますか？
+              <div className="glass-card rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-sm">Q</span>
+                  写真を削除するとどうなりますか？
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  A.
+                <p className="text-gray-300 leading-relaxed pl-8">
                   アプリ内で写真の記録を削除しても、元の写真はデバイスのフォトライブラリに残ります。
                   Footieはあくまで写真のメタデータ（タグ、場所など）を管理するアプリです。
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Q. 位置情報は必須ですか？
+              <div className="glass-card rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-sm">Q</span>
+                  位置情報は必須ですか？
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  A.
+                <p className="text-gray-300 leading-relaxed pl-8">
                   位置情報の使用は任意です。許可しなくても基本機能は使用できます。
                   位置情報を許可すると、マップ上で食事の記録を振り返ることができます。
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Q. データのバックアップはできますか？
+              <div className="glass-card rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-sm">Q</span>
+                  データのバックアップはできますか？
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  A.
+                <p className="text-gray-300 leading-relaxed pl-8">
                   iCloudバックアップを有効にしている場合、アプリのデータは自動的にバックアップされます。
                   デバイスを変更しても、バックアップから復元することでデータを引き継げます。
                 </p>
@@ -113,21 +127,27 @@ export default function FootieSupport() {
           </section>
 
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
               関連リンク
             </h2>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/apps/footie/privacy"
-                className="text-[#4CAF50] hover:text-white transition"
+                className="inline-flex items-center gap-2 text-green-400 hover:text-white transition group"
               >
-                プライバシーポリシー →
+                プライバシーポリシー
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
               <Link
                 href="/apps/footie/terms"
-                className="text-[#4CAF50] hover:text-white transition"
+                className="inline-flex items-center gap-2 text-green-400 hover:text-white transition group"
               >
-                利用規約 →
+                利用規約
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
             </div>
           </section>
@@ -136,9 +156,12 @@ export default function FootieSupport() {
         <div className="mt-8 text-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#0a0a0a] transition font-semibold"
+            className="inline-flex items-center gap-2 glass-card px-8 py-4 rounded-xl hover:bg-white/10 transition font-semibold text-white"
           >
-            ← ホームに戻る
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            ホームに戻る
           </Link>
         </div>
       </div>
